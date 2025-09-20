@@ -126,6 +126,7 @@ C:\Users\oneIM\source\repos\MOLCustom.CompositionApi.Server.Plugin\obj\Debug\net
 C:\Users\oneIM\source\repos\MOLCustom.CompositionApi.Server.Plugin\obj\Debug\net8.0\MOLCustom.CompositionApi.Server.Plugin.AssemblyInfoInputs.cache
 C:\Users\oneIM\source\repos\MOLCustom.CompositionApi.Server.Plugin\obj\Debug\net8.0\MOLCustom.CompositionApi.Server.Plugin.AssemblyInfo.cs
 C:\Users\oneIM\source\repos\MOLCustom.CompositionApi.Server.Plugin\obj\Debug\net8.0\MOLCustom.CompositionApi.Server.Plugin.csproj.CoreCompileInputs.cache
+C:\Users\oneIM\source\repos\MOLCustom.CompositionApi.Server.Plugin\obj\Debug\net8.0\MOLCustom.CompositionApi.Server.Plugin.sourcelink.json
 C:\Users\oneIM\source\repos\MOLCustom.CompositionApi.Server.Plugin\obj\Debug\net8.0\MOLCusto.987BCF80.Up2Date
 C:\Users\oneIM\source\repos\MOLCustom.CompositionApi.Server.Plugin\obj\Debug\net8.0\MOLCustom.CompositionApi.Server.Plugin.dll
 C:\Users\oneIM\source\repos\MOLCustom.CompositionApi.Server.Plugin\obj\Debug\net8.0\refint\MOLCustom.CompositionApi.Server.Plugin.dll

@@ -28,8 +28,8 @@ namespace QBM.CompositionApi
                         }
                     }
 
-                    string wc = String.Format("UID_AttestationCase in (select UID_AttestationCase from AttestationCase where xobjectkey = '{0}') and uid_personhead = '{1}'", xsubkey, strUID_Person);
-                    bool ex = await qr.Session.Source().ExistsAsync("ATT_VAttestationDecisionPerson", wc, ct).ConfigureAwait(false);
+                    string wc = String.Format("XObjectKey = '{0}' and UID_AttestationCase in (select UID_AttestationCase from ATT_VAttestationDecisionPerson where uid_personhead = '{1}')", xsubkey, strUID_Person);
+                    bool ex = await qr.Session.Source().ExistsAsync("AttestationCase", wc, ct).ConfigureAwait(false);
                     if (!ex)
                     {
                         throw new InvalidOperationException("You are not the eligible approver for this attestation case.");
