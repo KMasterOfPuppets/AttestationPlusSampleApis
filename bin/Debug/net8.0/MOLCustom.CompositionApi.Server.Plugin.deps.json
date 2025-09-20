@@ -1,0 +1,1336 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "MOLCustom.CompositionApi.Server.Plugin/1.0.0": {
+        "dependencies": {
+          "QBM.CompositionApi": "9.3.0.0",
+          "QBM.CompositionApi.Server": "9.3.0.0",
+          "QER.CompositionApi": "9.3.0.0",
+          "QER.CompositionApi.Server.PlugIn": "9.3.0.0",
+          "VI.Base": "9.3.0.0",
+          "VI.DB": "9.3.0.0"
+        },
+        "runtime": {
+          "MOLCustom.CompositionApi.Server.Plugin.dll": {}
+        }
+      },
+      "QBM.CompositionApi/9.3.0.0": {
+        "runtime": {
+          "QBM.CompositionApi.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/QBM.CompositionApi.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "QBM.CompositionApi.Server/9.3.0.0": {
+        "runtime": {
+          "QBM.CompositionApi.Server.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.445.9409"
+          }
+        },
+        "resources": {
+          "de/QBM.CompositionApi.Server.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "QER.CompositionApi/9.3.0.0": {
+        "runtime": {
+          "QER.CompositionApi.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/QER.CompositionApi.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "QER.CompositionApi.Server.PlugIn/9.3.0.0": {
+        "runtime": {
+          "QER.CompositionApi.Server.PlugIn.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.445.9409"
+          }
+        },
+        "resources": {
+          "de/QER.CompositionApi.Server.PlugIn.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "VI.Base/9.3.0.0": {
+        "runtime": {
+          "VI.Base.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/VI.Base.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "VI.DB/9.3.0.0": {
+        "runtime": {
+          "VI.DB.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.430.8126"
+          }
+        },
+        "resources": {
+          "de/VI.DB.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "NLog/5.0.0.0": {
+        "runtime": {
+          "NLog.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.3.4.2778"
+          }
+        }
+      },
+      "QBM.TypedWrappers/9.3.0.0": {
+        "runtime": {
+          "QBM.TypedWrappers.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        }
+      },
+      "VI.UI.Dialog.Core/9.3.0.0": {
+        "runtime": {
+          "VI.UI.Dialog.Core.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/VI.UI.Dialog.Core.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "VI.UI.Base/9.3.0.0": {
+        "runtime": {
+          "VI.UI.Base.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/VI.UI.Base.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "SkiaSharp/2.88.0.0": {
+        "runtime": {
+          "SkiaSharp.dll": {
+            "assemblyVersion": "2.88.0.0",
+            "fileVersion": "2.88.8.0"
+          }
+        }
+      },
+      "System.Runtime.Caching/8.0.0.1": {
+        "runtime": {
+          "System.Runtime.Caching.dll": {
+            "assemblyVersion": "8.0.0.1",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "VI.UI.Dialog.DB/9.3.0.0": {
+        "runtime": {
+          "VI.UI.Dialog.DB.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/VI.UI.Dialog.DB.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "VI.UI.Base.DB/9.3.0.0": {
+        "runtime": {
+          "VI.UI.Base.DB.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/VI.UI.Base.DB.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.UserSecrets/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Configuration.UserSecrets.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "CompositionApiToSwagger.Middleware/9.3.0.0": {
+        "runtime": {
+          "CompositionApiToSwagger.Middleware.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        }
+      },
+      "VI.WebRuntime.Common/9.3.0.0": {
+        "runtime": {
+          "VI.WebRuntime.Common.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/VI.WebRuntime.Common.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "Microsoft.Extensions.Primitives/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Primitives.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "Microsoft.Extensions.Hosting.Abstractions/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Hosting.Abstractions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "Microsoft.Net.Http.Headers/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Net.Http.Headers.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.824.36908"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.DependencyInjection.Abstractions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "ICSharpCode.SharpZipLib/1.4.2.13": {
+        "runtime": {
+          "ICSharpCode.SharpZipLib.dll": {
+            "assemblyVersion": "1.4.2.13",
+            "fileVersion": "1.4.2.13"
+          }
+        }
+      },
+      "System.IO.Pipelines/8.0.0.0": {
+        "runtime": {
+          "System.IO.Pipelines.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.SystemWebAdapters/1.4.0.0": {
+        "runtime": {
+          "Microsoft.AspNetCore.SystemWebAdapters.dll": {
+            "assemblyVersion": "1.4.0.0",
+            "fileVersion": "1.400.24.23001"
+          }
+        }
+      },
+      "VI.Reporting/9.3.0.0": {
+        "runtime": {
+          "VI.Reporting.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/VI.Reporting.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "NSwag.Core/13.15.10.0": {
+        "runtime": {
+          "NSwag.Core.dll": {
+            "assemblyVersion": "13.15.10.0",
+            "fileVersion": "13.15.10.0"
+          }
+        }
+      },
+      "CompositionApiToSwagger.Settings/9.3.0.0": {
+        "runtime": {
+          "CompositionApiToSwagger.Settings.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        }
+      },
+      "SqlWizard.Base/9.3.0.0": {
+        "runtime": {
+          "SqlWizard.Base.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/SqlWizard.Base.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "VI.ImageLibrary/9.3.0.0": {
+        "runtime": {
+          "VI.ImageLibrary.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Configuration.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.Abstractions/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Configuration.Abstractions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.Binder/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Configuration.Binder.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.724.31311"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Authentication.Negotiate/8.0.8.0": {
+        "runtime": {
+          "Microsoft.AspNetCore.Authentication.Negotiate.dll": {
+            "assemblyVersion": "8.0.8.0",
+            "fileVersion": "8.0.824.36908"
+          }
+        }
+      },
+      "Microsoft.Extensions.Options/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Options.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.224.6711"
+          }
+        }
+      },
+      "VI.Update/9.3.0.0": {
+        "runtime": {
+          "VI.Update.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/VI.Update.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "System.Net.Http.Formatting/6.0.0.0": {
+        "runtime": {
+          "System.Net.Http.Formatting.dll": {
+            "assemblyVersion": "6.0.0.0",
+            "fileVersion": "6.0.61130.707"
+          }
+        }
+      },
+      "QER.Interfaces/9.3.0.0": {
+        "runtime": {
+          "QER.Interfaces.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        }
+      },
+      "QER.Customizer/9.3.0.0": {
+        "runtime": {
+          "QER.Customizer.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/QER.Customizer.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "QER.OAuthAuthentifier/9.3.0.0": {
+        "runtime": {
+          "QER.OAuthAuthentifier.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/QER.OAuthAuthentifier.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "QER.TypedWrappers/9.3.0.0": {
+        "runtime": {
+          "QER.TypedWrappers.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        }
+      },
+      "Microsoft.Extensions.DependencyModel/8.0.0.2": {
+        "runtime": {
+          "Microsoft.Extensions.DependencyModel.dll": {
+            "assemblyVersion": "8.0.0.2",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "System.Security.Cryptography.ProtectedData/8.0.0.0": {
+        "runtime": {
+          "System.Security.Cryptography.ProtectedData.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.Json/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Configuration.Json.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.EnvironmentVariables/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Configuration.EnvironmentVariables.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "System.Configuration.ConfigurationManager/8.0.0.0": {
+        "runtime": {
+          "System.Configuration.ConfigurationManager.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "Microsoft.ApplicationInsights/2.22.0.997": {
+        "runtime": {
+          "Microsoft.ApplicationInsights.dll": {
+            "assemblyVersion": "2.22.0.997",
+            "fileVersion": "2.22.0.997"
+          }
+        }
+      },
+      "Microsoft.Data.SqlClient/5.0.0.0": {
+        "runtime": {
+          "Microsoft.Data.SqlClient.dll": {
+            "assemblyVersion": "5.0.0.0",
+            "fileVersion": "5.22.24240.6"
+          }
+        },
+        "resources": {
+          "de/Microsoft.Data.SqlClient.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "System.Drawing.Common/9.0.0.0": {
+        "runtime": {
+          "System.Drawing.Common.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52901"
+          }
+        }
+      },
+      "VI.Remoting/9.3.0.0": {
+        "runtime": {
+          "VI.Remoting.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/VI.Remoting.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "VI.Parsers/9.3.0.0": {
+        "runtime": {
+          "VI.Parsers.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/VI.Parsers.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "VI.AppMonitor/9.3.0.0": {
+        "runtime": {
+          "VI.AppMonitor.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/VI.AppMonitor.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "Common.Customizer/9.3.0.0": {
+        "runtime": {
+          "Common.Customizer.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/Common.Customizer.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Physical/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.FileProviders.Physical.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "Microsoft.Extensions.FileProviders.Abstractions/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.FileProviders.Abstractions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "VI.Web.ConfigBase/9.3.0.0": {
+        "runtime": {
+          "VI.Web.ConfigBase.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        }
+      },
+      "VI.Reporting.Interfaces/9.3.0.0": {
+        "runtime": {
+          "VI.Reporting.Interfaces.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        }
+      },
+      "Microsoft.Extensions.Logging.Abstractions/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Logging.Abstractions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "Microsoft.Extensions.Diagnostics.Abstractions/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Diagnostics.Abstractions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "Microsoft.Extensions.Caching.Abstractions/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Caching.Abstractions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "Microsoft.Extensions.Features/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Features.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46804"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.WebUtilities/8.0.0.0": {
+        "runtime": {
+          "Microsoft.AspNetCore.WebUtilities.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.824.36908"
+          }
+        }
+      },
+      "NJsonSchema/10.9.0.0": {
+        "runtime": {
+          "NJsonSchema.dll": {
+            "assemblyVersion": "10.9.0.0",
+            "fileVersion": "10.9.0.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.0.0": {
+        "runtime": {
+          "Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.3.27908"
+          }
+        }
+      },
+      "NJsonSchema.CodeGeneration.TypeScript/10.9.0.0": {
+        "runtime": {
+          "NJsonSchema.CodeGeneration.TypeScript.dll": {
+            "assemblyVersion": "10.9.0.0",
+            "fileVersion": "10.9.0.0"
+          }
+        }
+      },
+      "NJsonSchema.CodeGeneration/10.9.0.0": {
+        "runtime": {
+          "NJsonSchema.CodeGeneration.dll": {
+            "assemblyVersion": "10.9.0.0",
+            "fileVersion": "10.9.0.0"
+          }
+        }
+      },
+      "NSwag.Generation.WebApi/13.15.10.0": {
+        "runtime": {
+          "NSwag.Generation.WebApi.dll": {
+            "assemblyVersion": "13.15.10.0",
+            "fileVersion": "13.15.10.0"
+          }
+        }
+      },
+      "NSwag.CodeGeneration/13.15.10.0": {
+        "runtime": {
+          "NSwag.CodeGeneration.dll": {
+            "assemblyVersion": "13.15.10.0",
+            "fileVersion": "13.15.10.0"
+          }
+        }
+      },
+      "NSwag.CodeGeneration.TypeScript/13.15.10.0": {
+        "runtime": {
+          "NSwag.CodeGeneration.TypeScript.dll": {
+            "assemblyVersion": "13.15.10.0",
+            "fileVersion": "13.15.10.0"
+          }
+        }
+      },
+      "Namotion.Reflection/2.1.2.0": {
+        "runtime": {
+          "Namotion.Reflection.dll": {
+            "assemblyVersion": "2.1.2.0",
+            "fileVersion": "2.1.2.0"
+          }
+        }
+      },
+      "NSwag.Generation/13.15.10.0": {
+        "runtime": {
+          "NSwag.Generation.dll": {
+            "assemblyVersion": "13.15.10.0",
+            "fileVersion": "13.15.10.0"
+          }
+        }
+      },
+      "VI.Compile/9.3.0.0": {
+        "runtime": {
+          "VI.Compile.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/VI.Compile.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "System.DirectoryServices.Protocols/8.0.0.0": {
+        "runtime": {
+          "System.DirectoryServices.Protocols.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "Microsoft.Extensions.Caching.Memory/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Caching.Memory.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "Microsoft.AspNetCore.Connections.Abstractions/8.0.0.0": {
+        "runtime": {
+          "Microsoft.AspNetCore.Connections.Abstractions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.824.36908"
+          }
+        }
+      },
+      "InstallManager.Msi/9.3.0.0": {
+        "runtime": {
+          "InstallManager.Msi.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/InstallManager.Msi.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.0.0": {
+        "runtime": {
+          "Newtonsoft.Json.Bson.dll": {
+            "assemblyVersion": "1.0.0.0",
+            "fileVersion": "1.0.2.22727"
+          }
+        }
+      },
+      "DynamicAuthenticators/9.3.0.0": {
+        "runtime": {
+          "DynamicAuthenticators.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/DynamicAuthenticators.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "Microsoft.Extensions.Configuration.FileExtensions/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.Configuration.FileExtensions.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.724.31311"
+          }
+        }
+      },
+      "System.Diagnostics.EventLog/8.0.0.0": {
+        "runtime": {
+          "System.Diagnostics.EventLog.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "System.Private.Windows.Core/9.0.0.0": {
+        "runtime": {
+          "System.Private.Windows.Core.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52901"
+          }
+        }
+      },
+      "Microsoft.Win32.SystemEvents/9.0.0.0": {
+        "runtime": {
+          "Microsoft.Win32.SystemEvents.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.24.52809"
+          }
+        }
+      },
+      "Microsoft.CodeAnalysis.VisualBasic/4.11.0.0": {
+        "runtime": {
+          "Microsoft.CodeAnalysis.VisualBasic.dll": {
+            "assemblyVersion": "4.11.0.0",
+            "fileVersion": "4.1100.24.37604"
+          }
+        },
+        "resources": {
+          "de/Microsoft.CodeAnalysis.VisualBasic.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "Microsoft.CodeAnalysis/4.11.0.0": {
+        "runtime": {
+          "Microsoft.CodeAnalysis.dll": {
+            "assemblyVersion": "4.11.0.0",
+            "fileVersion": "4.1100.24.37604"
+          }
+        },
+        "resources": {
+          "de/Microsoft.CodeAnalysis.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "System.Diagnostics.PerformanceCounter/8.0.0.0": {
+        "runtime": {
+          "System.Diagnostics.PerformanceCounter.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "System.CodeDom/8.0.0.0": {
+        "runtime": {
+          "System.CodeDom.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "InstallManager.Core/9.3.0.0": {
+        "runtime": {
+          "InstallManager.Core.dll": {
+            "assemblyVersion": "9.3.0.0",
+            "fileVersion": "9.3.418.1361"
+          }
+        },
+        "resources": {
+          "de/InstallManager.Core.resources.dll": {
+            "locale": "de"
+          }
+        }
+      },
+      "Microsoft.Extensions.FileSystemGlobbing/8.0.0.0": {
+        "runtime": {
+          "Microsoft.Extensions.FileSystemGlobbing.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      },
+      "System.ServiceProcess.ServiceController/8.0.0.1": {
+        "runtime": {
+          "System.ServiceProcess.ServiceController.dll": {
+            "assemblyVersion": "8.0.0.1",
+            "fileVersion": "8.0.1024.46610"
+          }
+        }
+      },
+      "Microsoft.DotNet.PlatformAbstractions/3.1.6.0": {
+        "runtime": {
+          "Microsoft.DotNet.PlatformAbstractions.dll": {
+            "assemblyVersion": "3.1.6.0",
+            "fileVersion": "3.100.620.31604"
+          }
+        }
+      },
+      "System.Management/8.0.0.0": {
+        "runtime": {
+          "System.Management.dll": {
+            "assemblyVersion": "8.0.0.0",
+            "fileVersion": "8.0.23.53103"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "MOLCustom.CompositionApi.Server.Plugin/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "QBM.CompositionApi/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "QBM.CompositionApi.Server/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "QER.CompositionApi/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "QER.CompositionApi.Server.PlugIn/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VI.Base/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VI.DB/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NLog/5.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "QBM.TypedWrappers/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VI.UI.Dialog.Core/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VI.UI.Base/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SkiaSharp/2.88.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Runtime.Caching/8.0.0.1": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VI.UI.Dialog.DB/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VI.UI.Base.DB/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Configuration.UserSecrets/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CompositionApiToSwagger.Middleware/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VI.WebRuntime.Common/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Primitives/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Hosting.Abstractions/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Net.Http.Headers/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.DependencyInjection.Abstractions/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ICSharpCode.SharpZipLib/1.4.2.13": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.IO.Pipelines/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.SystemWebAdapters/1.4.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VI.Reporting/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NSwag.Core/13.15.10.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "CompositionApiToSwagger.Settings/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "SqlWizard.Base/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VI.ImageLibrary/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Configuration/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Configuration.Abstractions/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Configuration.Binder/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.Authentication.Negotiate/8.0.8.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Options/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VI.Update/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Net.Http.Formatting/6.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "QER.Interfaces/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "QER.Customizer/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "QER.OAuthAuthentifier/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "QER.TypedWrappers/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.DependencyModel/8.0.0.2": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Security.Cryptography.ProtectedData/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Configuration.Json/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Configuration.EnvironmentVariables/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Configuration.ConfigurationManager/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.ApplicationInsights/2.22.0.997": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Data.SqlClient/5.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Drawing.Common/9.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VI.Remoting/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VI.Parsers/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VI.AppMonitor/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Common.Customizer/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.FileProviders.Physical/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.FileProviders.Abstractions/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VI.Web.ConfigBase/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VI.Reporting.Interfaces/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Logging.Abstractions/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Diagnostics.Abstractions/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Caching.Abstractions/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Features/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.WebUtilities/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NJsonSchema/10.9.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Newtonsoft.Json/13.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NJsonSchema.CodeGeneration.TypeScript/10.9.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NJsonSchema.CodeGeneration/10.9.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NSwag.Generation.WebApi/13.15.10.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NSwag.CodeGeneration/13.15.10.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NSwag.CodeGeneration.TypeScript/13.15.10.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Namotion.Reflection/2.1.2.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "NSwag.Generation/13.15.10.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "VI.Compile/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.DirectoryServices.Protocols/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Caching.Memory/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.AspNetCore.Connections.Abstractions/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "InstallManager.Msi/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Newtonsoft.Json.Bson/1.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DynamicAuthenticators/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.Configuration.FileExtensions/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Diagnostics.EventLog/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Private.Windows.Core/9.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Win32.SystemEvents/9.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.CodeAnalysis.VisualBasic/4.11.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.CodeAnalysis/4.11.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Diagnostics.PerformanceCounter/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.CodeDom/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "InstallManager.Core/9.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.Extensions.FileSystemGlobbing/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.ServiceProcess.ServiceController/8.0.0.1": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Microsoft.DotNet.PlatformAbstractions/3.1.6.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Management/8.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
