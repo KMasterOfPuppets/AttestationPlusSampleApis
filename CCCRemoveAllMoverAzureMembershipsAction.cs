@@ -38,7 +38,8 @@ namespace QBM.CompositionApi
                     var runner = qr.Session.Resolve<IStatementRunner>();
                     using (var reader = runner.SqlExecute("CCC_DE_MoverAttestationSubAzureTeamsGroups", new[]
                     {
-                            QueryParameter.Create("xkey", xkey)
+                            QueryParameter.Create("xkey", xkey),
+                            QueryParameter.Create("xsubkey", xsubkey)
                         }))
                     {
                         while (reader.Read())
