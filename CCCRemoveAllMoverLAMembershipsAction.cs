@@ -7,11 +7,11 @@ using System.Xml.Linq;
 
 namespace QBM.CompositionApi
 {
-    public class CCCRemoveAllMoverADMembershipsAction : IApiProviderFor<QER.CompositionApi.Portal.PortalApiProject>, IApiProvider
+    public class CCCRemoveAllMoverLAMembershipsAction : IApiProviderFor<QER.CompositionApi.Portal.PortalApiProject>, IApiProvider
     {
         public void Build(IApiBuilder builder)
         {
-            builder.AddMethod(Method.Define("webportalplus/removeallmoveradmemberships/action")
+            builder.AddMethod(Method.Define("webportalplus/removeallmoverlamemberships/action")
                 .Handle<PostedID>("POST", async (posted, qr, ct) =>
                 {
                     string xkey = string.Empty;
@@ -36,7 +36,7 @@ namespace QBM.CompositionApi
                     }
                     var assignmentkeys = new List<string>();
                     var runner = qr.Session.Resolve<IStatementRunner>();
-                    using (var reader = runner.SqlExecute("CCC_DE_MoverAttestationSubADSGroup", new[]
+                    using (var reader = runner.SqlExecute("CCC_DE_MoverAttestationSubLocalAdmin", new[]
                     {
                             QueryParameter.Create("xkey", xkey),
                             QueryParameter.Create("xsubkey", xsubkey)

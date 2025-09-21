@@ -35,6 +35,7 @@ namespace QBM.CompositionApi
                     {
                         throw new InvalidOperationException("You are not the eligible approver for this attestation case.");
                     }
+                    var assignmentkeys = new List<string>();
                     var runner = qr.Session.Resolve<IStatementRunner>();
                     using (var reader = runner.SqlExecute("CCC_DE_YearlyAttestationSubADSGroup", new[]
                     {
@@ -46,47 +47,52 @@ namespace QBM.CompositionApi
                         {
                             for (int i = 0; i < reader.FieldCount; i++)
                             {
-                                if (reader.GetName(i) == "XObjectKey")
+                                var columnname = reader.GetName(i);
+                                if (columnname == "XObjectKey")
                                 {
-                                    string objectkey = reader.GetValue(i).ToString();
-                                    var q1 = Query.From("ADSAccountInADSGroup").Where(string.Format("XObjectKey = '{0}' and ((XOrigin & 1) = 1)", objectkey)).SelectAll();
-                                    var tryGet1 = await qr.Session.Source().TryGetAsync(q1, EntityLoadType.DelayedLogic).ConfigureAwait(false);
-                                    if (tryGet1.Success)
-                                    {
-                                        using (var u = qr.Session.StartUnitOfWork())
-                                        {
-                                            var objecttodelete = tryGet1.Result;
-                                            objecttodelete.MarkForDeletion();
-                                            await u.PutAsync(objecttodelete, ct).ConfigureAwait(false);
-                                            await u.CommitAsync(ct).ConfigureAwait(false);
-                                        }
-                                    }
+                                    var fieldvalue = reader.IsDBNull(i) ? string.Empty : reader.GetValue(i).ToString();
+                                    assignmentkeys.Add(fieldvalue);
+                                }
+                            }
+                        }
+                    }
+                    foreach (var key in assignmentkeys)
+                    {
+                        var q1 = Query.From("ADSAccountInADSGroup").Where(string.Format("XObjectKey = '{0}' and ((XOrigin & 1) = 1)", key)).SelectAll();
+                        var tryGet1 = await qr.Session.Source().TryGetAsync(q1, EntityLoadType.DelayedLogic).ConfigureAwait(false);
+                        if (tryGet1.Success)
+                        {
+                            using (var u = qr.Session.StartUnitOfWork())
+                            {
+                                var objecttodelete = tryGet1.Result;
+                                objecttodelete.MarkForDeletion();
+                                await u.PutAsync(objecttodelete, ct).ConfigureAwait(false);
+                                await u.CommitAsync(ct).ConfigureAwait(false);
+                            }
+                        }
 
-                                    var q2 = Query.From("ADSAccountInADSGroup").Where(string.Format("XObjectKey = '{0}' and ((XOrigin & 8) = 8)", objectkey)).SelectAll();
-                                    var tryGet2 = await qr.Session.Source().TryGetAsync(q2, EntityLoadType.DelayedLogic).ConfigureAwait(false);
-                                    if (tryGet2.Success)
-                                    {
-                                        XDocument doc = XDocument.Parse(objectkey);
-                                        var pValues = doc.Descendants("P").Select(p => p.Value).ToList();
-                                        string uidaccount = pValues[0];
-                                        string uidgroup = pValues[1];
-                                        var q3 = Query.From("ADSAccount").Where(string.Format("UID_ADSAccount = '{0}'", uidaccount)).SelectAll();
-                                        var q4 = Query.From("ADSGroup").Where(string.Format("UID_ADSGroup = '{0}'", uidgroup)).SelectAll();
-                                        var tryget3 = await qr.Session.Source().TryGetAsync(q3, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
-                                        var tryget4 = await qr.Session.Source().TryGetAsync(q4, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
-                                        if (tryget3.Success && tryget4.Success)
-                                        {
-                                            string uidperson = tryget3.Result.GetValue("UID_Person");
-                                            string groupobjectkey = tryget4.Result.GetValue("XObjectKey");
-                                            var q5 = Query.From("PersonWantsOrg").Where(string.Format("ObjectKeyOrdered = '{0}' and UID_PersonOrdered = '{1}'", groupobjectkey, uidperson)).OrderBy("XDateInserted desc").SelectAll();
-                                            var tryget5 = await qr.Session.Source().TryGetAsync(q5, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
-                                            if (tryget5.Success)
-                                            {
-                                                await tryget5.Result.CallMethodAsync("Unsubscribe", ct).ConfigureAwait(false);
-                                                await tryget5.Result.SaveAsync(qr.Session, ct).ConfigureAwait(continueOnCapturedContext: false);
-                                            }
-                                        }
-                                    }
+                        var q2 = Query.From("ADSAccountInADSGroup").Where(string.Format("XObjectKey = '{0}' and ((XOrigin & 8) = 8)", key)).SelectAll();
+                        var tryGet2 = await qr.Session.Source().TryGetAsync(q2, EntityLoadType.DelayedLogic).ConfigureAwait(false);
+                        if (tryGet2.Success)
+                        {
+                            XDocument doc = XDocument.Parse(key);
+                            var pValues = doc.Descendants("P").Select(p => p.Value).ToList();
+                            string uidaccount = pValues[0];
+                            string uidgroup = pValues[1];
+                            var q3 = Query.From("ADSAccount").Where(string.Format("UID_ADSAccount = '{0}'", uidaccount)).SelectAll();
+                            var q4 = Query.From("ADSGroup").Where(string.Format("UID_ADSGroup = '{0}'", uidgroup)).SelectAll();
+                            var tryget3 = await qr.Session.Source().TryGetAsync(q3, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
+                            var tryget4 = await qr.Session.Source().TryGetAsync(q4, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
+                            if (tryget3.Success && tryget4.Success)
+                            {
+                                string uidperson = tryget3.Result.GetValue("UID_Person");
+                                string groupobjectkey = tryget4.Result.GetValue("XObjectKey");
+                                var q5 = Query.From("PersonWantsOrg").Where(string.Format("ObjectKeyOrdered = '{0}' and UID_PersonOrdered = '{1}'", groupobjectkey, uidperson)).OrderBy("XDateInserted desc").SelectAll();
+                                var tryget5 = await qr.Session.Source().TryGetAsync(q5, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
+                                if (tryget5.Success)
+                                {
+                                    await tryget5.Result.CallMethodAsync("Unsubscribe", ct).ConfigureAwait(false);
+                                    await tryget5.Result.SaveAsync(qr.Session, ct).ConfigureAwait(continueOnCapturedContext: false);
                                 }
                             }
                         }
