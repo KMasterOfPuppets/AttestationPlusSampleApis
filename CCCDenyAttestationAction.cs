@@ -12,28 +12,48 @@ namespace QBM.CompositionApi
                 .Handle<PostedID>("POST", async (posted, qr, ct) =>
                 {
                     var strUID_Person = qr.Session.User().Uid;
-                    string uidcase = "";
-                    bool Decision = true;
+                    string xkey = string.Empty;
+                    string xsubkey = string.Empty;
+                    string originalAttestorUid = string.Empty;
+                    string delegateAttestorUid = string.Empty;
+                    string decisionType = string.Empty;
+                    bool Decision = false;
                     string Reason = null;
                     string UidJustification = null;
                     int SubLevel = -1;
 
                     foreach (var column in posted.columns)
                     {
-                        if (column.column == "xAttKey")
+                        if (column.column == "xKey")
                         {
-                            uidcase = column.value;
+                            xkey = column.value;
+                        }
+                        if (column.column == "xSubKey")
+                        {
+                            xsubkey = column.value;
+                        }
+                        if (column.column == "xOriginalAttestor")
+                        {
+                            originalAttestorUid = column.value;
+                        }
+                        if (column.column == "xDelegateAttestor")
+                        {
+                            delegateAttestorUid = column.value;
+                        }
+                        if (column.column == "#LDS#Decision Type")
+                        {
+                            decisionType = column.value;
                         }
                     }
 
-                    string wc = String.Format("UID_AttestationCase in (select UID_AttestationCase from ATT_VAttestationDecisionPerson where UID_AttestationCase = '{0}' and uid_personhead = '{1}')", uidcase, strUID_Person);
+                    string wc = String.Format("XObjectKey = '{0}' and UID_AttestationCase in (select UID_AttestationCase from ATT_VAttestationDecisionPerson where uid_personhead = '{1}')", xsubkey, strUID_Person);
                     bool ex = await qr.Session.Source().ExistsAsync("AttestationCase", wc, ct).ConfigureAwait(false);
                     if (!ex)
                     {
                         throw new InvalidOperationException("You are not the eligible approver for this attestation case.");
                     }
 
-                    var query1 = Query.From("AttestationCase").SelectAll().Where(String.Format("UID_AttestationCase = '{0}'", uidcase));
+                    var query1 = Query.From("AttestationCase").SelectAll().Where(String.Format("XObjectKey = '{0}'", xsubkey));
                     var tryget = await qr.Session.Source().TryGetAsync(query1, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
 
                     IEntity attestationCase = tryget.Result;
@@ -48,6 +68,21 @@ namespace QBM.CompositionApi
                         num
                     }, ct).ConfigureAwait(continueOnCapturedContext: false);
                     await attestationCase.SaveAsync(qr.Session, ct).ConfigureAwait(continueOnCapturedContext: false);
+
+                    var htParameter = new Dictionary<string, object>
+                    {
+                        { "approverUid", strUID_Person },
+                        { "type", "approveAll" },
+                        { "originalAttestorUid", originalAttestorUid },
+                        { "delegateAttestorUid", delegateAttestorUid },
+                        { "decisionType", decisionType }
+                    };
+
+                    using (var u = qr.Session.StartUnitOfWork())
+                    {
+                        await u.GenerateAsync(attestationCase, "CCC_AttestationHistoryDE", htParameter, ct).ConfigureAwait(false);
+                        await u.CommitAsync(ct).ConfigureAwait(false);
+                    };
                 }));
         }
         public class PostedID

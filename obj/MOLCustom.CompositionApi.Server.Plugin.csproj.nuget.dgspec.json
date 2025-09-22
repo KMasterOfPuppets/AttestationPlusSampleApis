@@ -10,11 +10,11 @@
         "projectUniqueName": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\MOLCustom.CompositionApi.Server.Plugin.csproj",
         "projectName": "MOLCustom.CompositionApi.Server.Plugin",
         "projectPath": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\MOLCustom.CompositionApi.Server.Plugin.csproj",
-        "packagesPath": "C:\\Users\\oneIM\\.nuget\\packages\\",
+        "packagesPath": "C:\\Users\\OneIM2\\.nuget\\packages\\",
         "outputPath": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\oneIM\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\OneIM2\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

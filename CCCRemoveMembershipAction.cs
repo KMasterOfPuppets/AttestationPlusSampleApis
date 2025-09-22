@@ -13,13 +13,28 @@ namespace QBM.CompositionApi
             builder.AddMethod(Method.Define("webportalplus/removemembership/action")
                 .Handle<PostedID>("POST", async (posted, qr, ct) =>
                 {
+                    var strUID_Person = qr.Session.User().Uid;
                     string objectkey = string.Empty;
+                    string xAttKey = string.Empty;
+                    string affectedPersonObjectKey = string.Empty;
+
                     foreach (var column in posted.columns)
                     {
                         if (column.column == "XObjectKey")
                         {
                             objectkey = column.value;
                         }
+                        if (column.column == "xAttKey")
+                        {
+                            xAttKey = column.value;
+                        }
+                    }
+
+                    string wc = String.Format("XObjectKey = '{0}' and UID_AttestationCase in (select UID_AttestationCase from ATT_VAttestationDecisionPerson where uid_personhead = '{1}')", xAttKey, strUID_Person);
+                    bool ex = await qr.Session.Source().ExistsAsync("AttestationCase", wc, ct).ConfigureAwait(false);
+                    if (!ex)
+                    {
+                        throw new InvalidOperationException("You are not the eligible approver for this attestation case.");
                     }
 
                     if (objectkey.StartsWith("<Key><T>PersonInOrg</T>", StringComparison.OrdinalIgnoreCase))
@@ -163,6 +178,23 @@ namespace QBM.CompositionApi
                             }
                         }
                     }
+
+                    var queryAC = Query.From("AttestationCase").SelectAll().Where(String.Format("XObjectKey = '{0}'", xAttKey));
+                    var trygetAC = await qr.Session.Source().TryGetAsync(queryAC, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
+
+                    IEntity attestationCase = trygetAC.Result;
+                    var htParameter = new Dictionary<string, object>
+                        {
+                            { "access", objectkey },
+                            { "approverUid", strUID_Person },
+                            { "type", "denySINGLE" }
+                        };
+
+                    using (var u = qr.Session.StartUnitOfWork())
+                    {
+                        await u.GenerateAsync(attestationCase, "CCC_AttestationHistoryDE", htParameter, ct).ConfigureAwait(false);
+                        await u.CommitAsync(ct).ConfigureAwait(false);
+                    };
                 }));
         }
         public class PostedID

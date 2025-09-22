@@ -82,6 +82,23 @@ namespace QBM.CompositionApi
                                 await tryget3.Result.SaveAsync(qr.Session, ct).ConfigureAwait(continueOnCapturedContext: false);
                             }
                         }
+
+                        var queryAC = Query.From("AttestationCase").SelectAll().Where(String.Format("XObjectKey = '{0}'", xsubkey));
+                        var trygetAC = await qr.Session.Source().TryGetAsync(queryAC, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
+
+                        IEntity attestationCase = trygetAC.Result;
+                        var htParameter = new Dictionary<string, object>
+                        {
+                            { "access", key },
+                            { "approverUid", strUID_Person },
+                            { "type", "denySINGLE" }
+                        };
+
+                        using (var u = qr.Session.StartUnitOfWork())
+                        {
+                            await u.GenerateAsync(attestationCase, "CCC_AttestationHistoryDE", htParameter, ct).ConfigureAwait(false);
+                            await u.CommitAsync(ct).ConfigureAwait(false);
+                        };
                     }
                 }));
         }
