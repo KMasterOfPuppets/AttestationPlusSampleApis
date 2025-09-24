@@ -16,6 +16,8 @@ namespace QBM.CompositionApi
                     var strUID_Person = qr.Session.User().Uid;
                     string objectkey = string.Empty;
                     string xAttKey = string.Empty;
+                    string riskindex = string.Empty;
+                    string affectedright = string.Empty;
                     string affectedPersonObjectKey = string.Empty;
 
                     foreach (var column in posted.columns)
@@ -24,9 +26,17 @@ namespace QBM.CompositionApi
                         {
                             objectkey = column.value;
                         }
-                        if (column.column == "xAttKey")
+                        if (column.column == "xSubKey")
                         {
                             xAttKey = column.value;
+                        }
+                        if (column.column == "#LDS#Risk")
+                        {
+                            riskindex = column.value;
+                        }
+                        if (column.column == "#LDS#Affected right")
+                        {
+                            affectedright = column.value;
                         }
                     }
 
@@ -186,7 +196,10 @@ namespace QBM.CompositionApi
                     var htParameter = new Dictionary<string, object>
                         {
                             { "access", objectkey },
+                            { "datehead", DateTime.Now },
                             { "approverUid", strUID_Person },
+                            { "affectedright", affectedright },
+                            { "riskindex", riskindex },
                             { "type", "denySINGLE" }
                         };
 

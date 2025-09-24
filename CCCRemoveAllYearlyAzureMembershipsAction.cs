@@ -58,10 +58,15 @@ namespace QBM.CompositionApi
                     }
                     foreach (var key in assignmentkeys)
                     {
+                        var riskindex = string.Empty;
+                        var q0 = Query.From("AADGroup").Where(string.Format("UID_AADGroup in (select UID_AADGroup from AADUserInGroup where XObjectKey = '{0}')", key)).SelectAll();
+                        var tryGet0 = await qr.Session.Source().TryGetAsync(q0, EntityLoadType.DelayedLogic).ConfigureAwait(false);
+                        var affectedright = tryGet0.Result.GetValue("DisplayName");
                         var q1 = Query.From("AADUserInGroup").Where(string.Format("XObjectKey = '{0}' and ((XOrigin & 1) = 1)", key)).SelectAll();
                         var tryGet1 = await qr.Session.Source().TryGetAsync(q1, EntityLoadType.DelayedLogic).ConfigureAwait(false);
                         if (tryGet1.Success)
                         {
+                            riskindex = tryGet1.Result.GetValue("RiskIndexCalculated").ToString();
                             using (var u = qr.Session.StartUnitOfWork())
                             {
                                 var objecttodelete = tryGet1.Result;
@@ -75,6 +80,10 @@ namespace QBM.CompositionApi
                         var tryGet2 = await qr.Session.Source().TryGetAsync(q2, EntityLoadType.DelayedLogic).ConfigureAwait(false);
                         if (tryGet2.Success)
                         {
+                            if (string.IsNullOrEmpty(riskindex))
+                            {
+                                riskindex = tryGet2.Result.GetValue("RiskIndexCalculated").ToString();
+                            }
                             XDocument doc = XDocument.Parse(key);
                             var pValues = doc.Descendants("P").Select(p => p.Value).ToList();
                             string uidaccount = pValues[0];
@@ -104,7 +113,10 @@ namespace QBM.CompositionApi
                         var htParameter = new Dictionary<string, object>
                         {
                             { "access", key },
+                            { "datehead", DateTime.Now },
                             { "approverUid", strUID_Person },
+                            { "affectedright", affectedright },
+                            { "riskindex", riskindex },
                             { "type", "denySINGLE" }
                         };
 

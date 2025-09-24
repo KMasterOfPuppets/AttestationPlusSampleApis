@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("MOLCustom.CompositionApi.Server.Plugin")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+b1d24525427f54461576b9b753cf2279257c664b")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e8cbfcd944a631b18c487e95970aabd473199b76")]
 [assembly: System.Reflection.AssemblyProductAttribute("MOLCustom.CompositionApi.Server.Plugin")]
 [assembly: System.Reflection.AssemblyTitleAttribute("MOLCustom.CompositionApi.Server.Plugin")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

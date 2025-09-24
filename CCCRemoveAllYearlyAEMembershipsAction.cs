@@ -57,12 +57,17 @@ namespace QBM.CompositionApi
                     }
                     foreach (var key in assignmentkeys)
                     {
+                        var riskindex = string.Empty;
+                        var q0 = Query.From("AERole").Where(string.Format("UID_AERole in (select UID_AERole from PersonInAERole where XObjectKey = '{0}')", key)).SelectAll();
+                        var tryGet0 = await qr.Session.Source().TryGetAsync(q0, EntityLoadType.DelayedLogic).ConfigureAwait(false);
+                        var affectedright = tryGet0.Result.GetValue("Ident_AERole");
                         var q1 = Query.From("PersonInAERole").Where(string.Format("XObjectKey = '{0}' and ((XOrigin & 1) = 1)", key)).SelectAll();
                         var tryGet1 = await qr.Session.Source().TryGetAsync(q1, EntityLoadType.DelayedLogic).ConfigureAwait(false);
                         if (tryGet1.Success)
                         {
                             using (var u = qr.Session.StartUnitOfWork())
                             {
+                                riskindex = tryGet1.Result.GetValue("RiskIndexCalculated").ToString();
                                 var objecttodelete = tryGet1.Result;
                                 objecttodelete.MarkForDeletion();
                                 await u.PutAsync(objecttodelete, ct).ConfigureAwait(false);
@@ -74,6 +79,10 @@ namespace QBM.CompositionApi
                         var tryGet2 = await qr.Session.Source().TryGetAsync(q2, EntityLoadType.DelayedLogic).ConfigureAwait(false);
                         if (tryGet2.Success)
                         {
+                            if (string.IsNullOrEmpty(riskindex))
+                            {
+                                riskindex = tryGet1.Result.GetValue("RiskIndexCalculated").ToString();
+                            }
                             var q3 = Query.From("PersonWantsOrg").Where(string.Format("ObjectKeyAssignment = '{0}'", key)).OrderBy("XDateInserted desc").SelectAll();
                             var tryget3 = await qr.Session.Source().TryGetAsync(q3, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
                             if (tryget3.Success)
@@ -90,7 +99,10 @@ namespace QBM.CompositionApi
                         var htParameter = new Dictionary<string, object>
                         {
                             { "access", key },
+                            { "datehead", DateTime.Now },
                             { "approverUid", strUID_Person },
+                            { "affectedright", affectedright },
+                            { "riskindex", riskindex },
                             { "type", "denySINGLE" }
                         };
 
