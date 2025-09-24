@@ -26,7 +26,7 @@ namespace QBM.CompositionApi
                         {
                             objectkey = column.value;
                         }
-                        if (column.column == "xSubKey")
+                        if (column.column == "xAttKey")
                         {
                             xAttKey = column.value;
                         }

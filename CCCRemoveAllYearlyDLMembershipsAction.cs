@@ -81,7 +81,7 @@ namespace QBM.CompositionApi
                         {
                             if (string.IsNullOrEmpty(riskindex))
                             {
-                                riskindex = tryGet1.Result.GetValue("RiskIndexCalculated").ToString();
+                                riskindex = tryGet2.Result.GetValue("RiskIndexCalculated").ToString();
                             }
                             XDocument doc = XDocument.Parse(key);
                             var pValues = doc.Descendants("P").Select(p => p.Value).ToList();
