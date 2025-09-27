@@ -14,9 +14,6 @@ namespace QBM.CompositionApi
                     var strUID_Person = qr.Session.User().Uid;
                     string xkey = string.Empty;
                     string xsubkey = string.Empty;
-                    string originalAttestorUid = string.Empty;
-                    string delegateAttestorUid = string.Empty;
-                    string decisionType = string.Empty;
                     bool Decision = true;
                     string Reason = null;
                     string UidJustification = null;
@@ -32,18 +29,6 @@ namespace QBM.CompositionApi
                         {
                             xsubkey = column.value;
                         }
-                        if (column.column == "xOriginalAttestor")
-                        {
-                            originalAttestorUid = column.value;
-                        }
-                        if (column.column == "xDelegateAttestor")
-                        {
-                            delegateAttestorUid = column.value;
-                        }
-                        if (column.column == "#LDS#Decision Type")
-                        {
-                            decisionType = column.value;
-                        }
                     }
                     string wc = String.Format("XObjectKey = '{0}' and UID_AttestationCase in (select UID_AttestationCase from ATT_VAttestationDecisionPerson where uid_personhead = '{1}')", xsubkey, strUID_Person);
                     bool ex = await qr.Session.Source().ExistsAsync("AttestationCase", wc, ct).ConfigureAwait(false);
@@ -56,7 +41,7 @@ namespace QBM.CompositionApi
                     var tryget = await qr.Session.Source().TryGetAsync(query1, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
 
                     IEntity attestationCase = tryget.Result;
-
+                    
                     int num = SubLevel;
                     await attestationCase.CallMethodAsync("MakeDecision", new object[5]
                     {
@@ -68,13 +53,24 @@ namespace QBM.CompositionApi
                     }, ct).ConfigureAwait(continueOnCapturedContext: false);
                     await attestationCase.SaveAsync(qr.Session, ct).ConfigureAwait(continueOnCapturedContext: false);
 
+                    string type = string.Empty;
+                    string policyUid = attestationCase.GetValue("UID_AttestationPolicy");
+                    var yearlyUid = await qr.Session.Config().GetConfigParmAsync("Custom\\DataExplorerAttestations\\Yearly", ct).ConfigureAwait(false);
+                    var moverUid = await qr.Session.Config().GetConfigParmAsync("Custom\\DataExplorerAttestations\\Mover", ct).ConfigureAwait(false);
+                    var externalUid = await qr.Session.Config().GetConfigParmAsync("Custom\\DataExplorerAttestations\\External", ct).ConfigureAwait(false);
+                    var guestUid = await qr.Session.Config().GetConfigParmAsync("Custom\\DataExplorerAttestations\\Guest", ct).ConfigureAwait(false);
+                    if (string.Equals(policyUid, yearlyUid) || string.Equals(policyUid, moverUid))
+                    {
+                        type = "approveAll";
+                    }
+                    if (string.Equals(policyUid, externalUid) || string.Equals(policyUid, guestUid))
+                    {
+                        type = "approveExternalOrGuest";
+                    }
                     var htParameter = new Dictionary<string, object>
                     {
                         { "approverUid", strUID_Person },
-                        { "type", "approveAll" },
-                        { "originalAttestorUid", originalAttestorUid },
-                        { "delegateAttestorUid", delegateAttestorUid },
-                        { "decisionType", decisionType }
+                        { "type", type }
                     };
 
                     using (var u = qr.Session.StartUnitOfWork())

@@ -14,13 +14,11 @@ namespace QBM.CompositionApi
                     var strUID_Person = qr.Session.User().Uid;
                     string xkey = string.Empty;
                     string xsubkey = string.Empty;
-                    string originalAttestorUid = string.Empty;
-                    string delegateAttestorUid = string.Empty;
-                    string decisionType = string.Empty;
                     bool Decision = false;
                     string Reason = null;
                     string UidJustification = null;
                     int SubLevel = -1;
+                    string manager = string.Empty;
 
                     foreach (var column in posted.columns)
                     {
@@ -31,18 +29,6 @@ namespace QBM.CompositionApi
                         if (column.column == "xSubKey")
                         {
                             xsubkey = column.value;
-                        }
-                        if (column.column == "xOriginalAttestor")
-                        {
-                            originalAttestorUid = column.value;
-                        }
-                        if (column.column == "xDelegateAttestor")
-                        {
-                            delegateAttestorUid = column.value;
-                        }
-                        if (column.column == "#LDS#Decision Type")
-                        {
-                            decisionType = column.value;
                         }
                     }
 
@@ -55,6 +41,13 @@ namespace QBM.CompositionApi
 
                     var query1 = Query.From("AttestationCase").SelectAll().Where(String.Format("XObjectKey = '{0}'", xsubkey));
                     var tryget = await qr.Session.Source().TryGetAsync(query1, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
+
+                    var queryM = Query.From("Person").SelectAll().Where(String.Format("XObjectKey = '{0}'", xkey));
+                    var trygetM = await qr.Session.Source().TryGetAsync(queryM, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
+                    if (trygetM.Success)
+                    {
+                        manager = trygetM.Result.GetValue("UID_PersonHead");
+                    }
 
                     IEntity attestationCase = tryget.Result;
 
@@ -72,10 +65,8 @@ namespace QBM.CompositionApi
                     var htParameter = new Dictionary<string, object>
                     {
                         { "approverUid", strUID_Person },
-                        { "type", "approveAll" },
-                        { "originalAttestorUid", originalAttestorUid },
-                        { "delegateAttestorUid", delegateAttestorUid },
-                        { "decisionType", decisionType }
+                        { "type", "denyExternalOrGuest" },
+                        { "manager", manager }
                     };
 
                     using (var u = qr.Session.StartUnitOfWork())

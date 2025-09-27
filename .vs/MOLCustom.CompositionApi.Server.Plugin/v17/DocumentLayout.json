@@ -3,36 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|c:\\users\\oneim\\source\\repos\\molcustom.compositionapi.server.plugin\\cccremovemembershipaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|solutionrelative:cccremovemembershipaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|c:\\users\\oneim\\source\\repos\\molcustom.compositionapi.server.plugin\\cccremoveallmoveradmembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|solutionrelative:cccremoveallmoveradmembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|c:\\users\\oneim\\source\\repos\\molcustom.compositionapi.server.plugin\\cccremoveallyearlyadmembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|solutionrelative:cccremoveallyearlyadmembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|c:\\users\\oneim\\source\\repos\\molcustom.compositionapi.server.plugin\\cccremoveallyearlyaemembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|solutionrelative:cccremoveallyearlyaemembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|c:\\users\\oneim\\source\\repos\\molcustom.compositionapi.server.plugin\\cccremoveallyearlydlmembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|solutionrelative:cccremoveallyearlydlmembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|c:\\users\\oneim\\source\\repos\\molcustom.compositionapi.server.plugin\\cccremoveallyearlylamembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|solutionrelative:cccremoveallyearlylamembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|c:\\users\\oneim\\source\\repos\\molcustom.compositionapi.server.plugin\\cccremoveallmoverlamembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|solutionrelative:cccremoveallmoverlamembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|c:\\users\\oneim\\source\\repos\\molcustom.compositionapi.server.plugin\\cccremoveallmoverdlmembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|solutionrelative:cccremoveallmoverdlmembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|c:\\users\\oneim\\source\\repos\\molcustom.compositionapi.server.plugin\\cccremoveallmoverazuremembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|solutionrelative:cccremoveallmoverazuremembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -41,111 +17,39 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 219,
+          "DockedWidth": 188,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CCCRemoveAllMoverAzureMembershipsAction.cs",
+              "DocumentMoniker": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllMoverAzureMembershipsAction.cs",
+              "RelativeDocumentMoniker": "CCCRemoveAllMoverAzureMembershipsAction.cs",
+              "ToolTip": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllMoverAzureMembershipsAction.cs",
+              "RelativeToolTip": "CCCRemoveAllMoverAzureMembershipsAction.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAARAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T11:07:23.451Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 188,
           "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CCCRemoveMembershipAction.cs",
-              "DocumentMoniker": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveMembershipAction.cs",
-              "RelativeDocumentMoniker": "CCCRemoveMembershipAction.cs",
-              "ToolTip": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveMembershipAction.cs",
-              "RelativeToolTip": "CCCRemoveMembershipAction.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAUwBoAAAA1AAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T14:07:44.557Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "CCCRemoveAllYearlyLAMembershipsAction.cs",
-              "DocumentMoniker": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllYearlyLAMembershipsAction.cs",
-              "RelativeDocumentMoniker": "CCCRemoveAllYearlyLAMembershipsAction.cs",
-              "ToolTip": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllYearlyLAMembershipsAction.cs",
-              "RelativeToolTip": "CCCRemoveAllYearlyLAMembershipsAction.cs",
-              "ViewState": "AQIAAEYAAAAAAAAAAAAgwFMAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T09:53:56.42Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CCCRemoveAllYearlyDLMembershipsAction.cs",
-              "DocumentMoniker": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllYearlyDLMembershipsAction.cs",
-              "RelativeDocumentMoniker": "CCCRemoveAllYearlyDLMembershipsAction.cs",
-              "ToolTip": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllYearlyDLMembershipsAction.cs",
-              "RelativeToolTip": "CCCRemoveAllYearlyDLMembershipsAction.cs",
-              "ViewState": "AQIAADoAAAAAAAAAAAAgwHAAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T09:53:42.326Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CCCRemoveAllYearlyAEMembershipsAction.cs",
-              "DocumentMoniker": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllYearlyAEMembershipsAction.cs",
-              "RelativeDocumentMoniker": "CCCRemoveAllYearlyAEMembershipsAction.cs",
-              "ToolTip": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllYearlyAEMembershipsAction.cs",
-              "RelativeToolTip": "CCCRemoveAllYearlyAEMembershipsAction.cs",
-              "ViewState": "AQIAAEkAAAAAAAAAAAAgwFMAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T09:51:42.81Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CCCRemoveAllYearlyADMembershipsAction.cs",
-              "DocumentMoniker": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllYearlyADMembershipsAction.cs",
-              "RelativeDocumentMoniker": "CCCRemoveAllYearlyADMembershipsAction.cs",
-              "ToolTip": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllYearlyADMembershipsAction.cs",
-              "RelativeToolTip": "CCCRemoveAllYearlyADMembershipsAction.cs",
-              "ViewState": "AQIAAD0AAAAAAAAAAAAgwFQAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T09:51:09.075Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "CCCRemoveAllMoverLAMembershipsAction.cs",
-              "DocumentMoniker": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllMoverLAMembershipsAction.cs",
-              "RelativeDocumentMoniker": "CCCRemoveAllMoverLAMembershipsAction.cs",
-              "ToolTip": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllMoverLAMembershipsAction.cs",
-              "RelativeToolTip": "CCCRemoveAllMoverLAMembershipsAction.cs",
-              "ViewState": "AQIAAEMAAAAAAAAAAAAgwFMAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T09:50:39.792Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "CCCRemoveAllMoverDLMembershipsAction.cs",
-              "DocumentMoniker": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllMoverDLMembershipsAction.cs",
-              "RelativeDocumentMoniker": "CCCRemoveAllMoverDLMembershipsAction.cs",
-              "ToolTip": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllMoverDLMembershipsAction.cs",
-              "RelativeToolTip": "CCCRemoveAllMoverDLMembershipsAction.cs",
-              "ViewState": "AQIAAEAAAAAAAAAAAAAgwFMAAAAzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T09:48:48.76Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
               "Title": "CCCRemoveAllMoverADMembershipsAction.cs",
               "DocumentMoniker": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllMoverADMembershipsAction.cs",
               "RelativeDocumentMoniker": "CCCRemoveAllMoverADMembershipsAction.cs",
               "ToolTip": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllMoverADMembershipsAction.cs",
               "RelativeToolTip": "CCCRemoveAllMoverADMembershipsAction.cs",
-              "ViewState": "AQIAAEwAAAAAAAAAAAAgwFEAAAAZAAAA",
+              "ViewState": "AQIAAG4AAAAAAAAAAAAqwIMAAAAJAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T09:45:37.527Z",
+              "WhenOpened": "2025-09-27T11:07:49.665Z",
               "EditorCaption": ""
             }
           ]
