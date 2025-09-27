@@ -3,12 +3,16 @@
   "WorkspaceRootPath": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|c:\\users\\oneim\\source\\repos\\molcustom.compositionapi.server.plugin\\cccapproveattestationaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|solutionrelative:cccapproveattestationaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|c:\\users\\oneim\\source\\repos\\molcustom.compositionapi.server.plugin\\cccremoveallmoveradmembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|solutionrelative:cccremoveallmoveradmembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|c:\\users\\oneim\\source\\repos\\molcustom.compositionapi.server.plugin\\cccremoveallmoverazuremembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|solutionrelative:cccremoveallmoverazuremembershipsaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|c:\\users\\oneim\\source\\repos\\molcustom.compositionapi.server.plugin\\cccdenyattestationaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{3D28A1DD-D03C-40E0-9672-A6CE25E5541E}|MOLCustom.CompositionApi.Server.Plugin.csproj|solutionrelative:cccdenyattestationaction.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -22,34 +26,41 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "CCCRemoveAllMoverAzureMembershipsAction.cs",
-              "DocumentMoniker": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllMoverAzureMembershipsAction.cs",
-              "RelativeDocumentMoniker": "CCCRemoveAllMoverAzureMembershipsAction.cs",
-              "ToolTip": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllMoverAzureMembershipsAction.cs",
-              "RelativeToolTip": "CCCRemoveAllMoverAzureMembershipsAction.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAARAAAA",
+              "DocumentIndex": 0,
+              "Title": "CCCApproveAttestationAction.cs",
+              "DocumentMoniker": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCApproveAttestationAction.cs",
+              "RelativeDocumentMoniker": "CCCApproveAttestationAction.cs",
+              "ToolTip": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCApproveAttestationAction.cs",
+              "RelativeToolTip": "CCCApproveAttestationAction.cs",
+              "ViewState": "AQIAAEAAAAAAAAAAAAAIwEQAAABZAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T11:07:23.451Z",
+              "WhenOpened": "2025-09-27T20:47:21.195Z",
               "EditorCaption": ""
-            }
-          ]
-        },
-        {
-          "DockedWidth": 188,
-          "SelectedChildIndex": 0,
-          "Children": [
+            },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "CCCRemoveAllMoverADMembershipsAction.cs",
               "DocumentMoniker": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllMoverADMembershipsAction.cs",
               "RelativeDocumentMoniker": "CCCRemoveAllMoverADMembershipsAction.cs",
               "ToolTip": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCRemoveAllMoverADMembershipsAction.cs",
               "RelativeToolTip": "CCCRemoveAllMoverADMembershipsAction.cs",
-              "ViewState": "AQIAAG4AAAAAAAAAAAAqwIMAAAAJAAAA",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAAAHIAAAAuAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-27T11:07:49.665Z",
+              "WhenOpened": "2025-09-27T21:01:50.426Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CCCDenyAttestationAction.cs",
+              "DocumentMoniker": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCDenyAttestationAction.cs",
+              "RelativeDocumentMoniker": "CCCDenyAttestationAction.cs",
+              "ToolTip": "C:\\Users\\oneIM\\source\\repos\\MOLCustom.CompositionApi.Server.Plugin\\CCCDenyAttestationAction.cs",
+              "RelativeToolTip": "CCCDenyAttestationAction.cs",
+              "ViewState": "AQIAACsAAAAAAAAAAAAgwEwAAAA5AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-27T20:54:51.622Z",
               "EditorCaption": ""
             }
           ]

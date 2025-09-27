@@ -14,6 +14,8 @@ namespace QBM.CompositionApi
                     var strUID_Person = qr.Session.User().Uid;
                     string xkey = string.Empty;
                     string xsubkey = string.Empty;
+                    string decisionType = string.Empty;
+                    string delegatedFrom = string.Empty;
                     bool Decision = false;
                     string Reason = null;
                     string UidJustification = null;
@@ -29,6 +31,14 @@ namespace QBM.CompositionApi
                         if (column.column == "xSubKey")
                         {
                             xsubkey = column.value;
+                        }
+                        if (column.column == "#LDS#Decision Type")
+                        {
+                            decisionType = column.value;
+                        }
+                        if (column.column == "#LDS#Delegated from")
+                        {
+                            delegatedFrom = column.value;
                         }
                     }
 
@@ -66,7 +76,9 @@ namespace QBM.CompositionApi
                     {
                         { "approverUid", strUID_Person },
                         { "type", "denyExternalOrGuest" },
-                        { "manager", manager }
+                        { "manager", manager },
+                        { "decisionType", decisionType },
+                        { "delegatedFrom", delegatedFrom }
                     };
 
                     using (var u = qr.Session.StartUnitOfWork())

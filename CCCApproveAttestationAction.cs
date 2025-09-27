@@ -1,4 +1,5 @@
 ﻿using QBM.CompositionApi.Definition;
+using System;
 using VI.DB;
 using VI.DB.Entities;
 
@@ -14,6 +15,8 @@ namespace QBM.CompositionApi
                     var strUID_Person = qr.Session.User().Uid;
                     string xkey = string.Empty;
                     string xsubkey = string.Empty;
+                    string decisionType = string.Empty;
+                    string delegatedFrom = string.Empty;
                     bool Decision = true;
                     string Reason = null;
                     string UidJustification = null;
@@ -28,6 +31,14 @@ namespace QBM.CompositionApi
                         if (column.column == "xSubKey")
                         {
                             xsubkey = column.value;
+                        }
+                        if (column.column == "#LDS#Decision Type")
+                        {
+                            decisionType = column.value;
+                        }
+                        if (column.column == "#LDS#Delegated from")
+                        {
+                            delegatedFrom = column.value;
                         }
                     }
                     string wc = String.Format("XObjectKey = '{0}' and UID_AttestationCase in (select UID_AttestationCase from ATT_VAttestationDecisionPerson where uid_personhead = '{1}')", xsubkey, strUID_Person);
@@ -70,7 +81,9 @@ namespace QBM.CompositionApi
                     var htParameter = new Dictionary<string, object>
                     {
                         { "approverUid", strUID_Person },
-                        { "type", type }
+                        { "type", type },
+                        { "decisionType", decisionType },
+                        { "delegatedFrom", delegatedFrom }
                     };
 
                     using (var u = qr.Session.StartUnitOfWork())
