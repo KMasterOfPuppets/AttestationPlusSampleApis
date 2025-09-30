@@ -32,6 +32,14 @@ namespace QBM.CompositionApi
                         {
                             xsubkey = column.value;
                         }
+                        if (column.column == "xPersonKey")
+                        {
+                            xkey = column.value;
+                        }
+                        if (column.column == "xCaseKey")
+                        {
+                            xsubkey = column.value;
+                        }
                         if (column.column == "#LDS#Decision Type")
                         {
                             decisionType = column.value;

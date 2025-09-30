@@ -38,7 +38,7 @@ namespace QBM.CompositionApi
                     var assignmentkeys = new List<string>();
                     var runner = qr.Session.Resolve<IStatementRunner>();
                     using (var reader = runner.SqlExecute("CCC_DE_YearlyAttestationSubADSGroup", new[]
-                    {
+                    {QueryParameter.Create("uidperson", strUID_Person),
                             QueryParameter.Create("xkey", xkey),
                             QueryParameter.Create("xsubkey", xsubkey)
                         }))
