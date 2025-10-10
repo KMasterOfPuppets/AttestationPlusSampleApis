@@ -30,7 +30,7 @@ namespace QBM.CompositionApi
                         {
                             xAttKey = column.value;
                         }
-                        if (column.column == "#LDS#Risk")
+                        if (column.column == "xRisk")
                         {
                             riskindex = column.value;
                         }
