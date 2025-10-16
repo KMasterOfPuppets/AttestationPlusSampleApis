@@ -86,8 +86,8 @@ namespace QBM.CompositionApi
                             }
                             XDocument doc = XDocument.Parse(key);
                             var pValues = doc.Descendants("P").Select(p => p.Value).ToList();
-                            string uidaccount = pValues[0];
-                            string uidgroup = pValues[1];
+                            string uidaccount = pValues[1];
+                            string uidgroup = pValues[0];
                             var q3 = Query.From("AADUser").Where(string.Format("UID_AADUser = '{0}'", uidaccount)).SelectAll();
                             var q4 = Query.From("AADGroup").Where(string.Format("UID_AADGroup = '{0}'", uidgroup)).SelectAll();
                             var tryget3 = await qr.Session.Source().TryGetAsync(q3, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
@@ -96,7 +96,7 @@ namespace QBM.CompositionApi
                             {
                                 string uidperson = tryget3.Result.GetValue("UID_Person");
                                 string groupobjectkey = tryget4.Result.GetValue("XObjectKey");
-                                var q5 = Query.From("PersonWantsOrg").Where(string.Format("ObjectKeyOrdered = '{0}' and UID_PersonOrdered = '{1}'", groupobjectkey, uidperson)).OrderBy("XDateInserted desc").SelectAll();
+                                var q5 = Query.From("PersonWantsOrg").Where(string.Format("ObjectKeyOrdered = '{0}' and UID_PersonOrdered = '{1}' and OrderState = 'Assigned'", groupobjectkey, uidperson)).OrderBy("XDateInserted desc").SelectAll();
                                 var tryget5 = await qr.Session.Source().TryGetAsync(q5, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
                                 if (tryget5.Success)
                                 {

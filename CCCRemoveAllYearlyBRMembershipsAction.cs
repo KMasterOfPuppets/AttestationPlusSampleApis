@@ -85,7 +85,7 @@ namespace QBM.CompositionApi
                             {
                                 riskindex = tryGet2.Result.GetValue("RiskIndexCalculated").ToString();
                             }
-                            var q3 = Query.From("PersonWantsOrg").Where(string.Format("ObjectKeyAssignment = '{0}'", key)).OrderBy("XDateInserted desc").SelectAll();
+                            var q3 = Query.From("PersonWantsOrg").Where(string.Format("ObjectKeyAssignment = '{0}' and OrderState = 'Assigned'", key)).OrderBy("XDateInserted desc").SelectAll();
                             var tryget3 = await qr.Session.Source().TryGetAsync(q3, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
                             if (tryget3.Success)
                             {

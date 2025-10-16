@@ -95,7 +95,7 @@ namespace QBM.CompositionApi
                             {
                                 string uidperson = tryget3.Result.GetValue("UID_Person");
                                 string groupobjectkey = tryget4.Result.GetValue("XObjectKey");
-                                var q5 = Query.From("PersonWantsOrg").Where(string.Format("ObjectKeyOrdered = '{0}' and UID_PersonOrdered = '{1}'", groupobjectkey, uidperson)).OrderBy("XDateInserted desc").SelectAll();
+                                var q5 = Query.From("PersonWantsOrg").Where(string.Format("ObjectKeyOrdered = '{0}' and UID_PersonOrdered = '{1}' and OrderState = 'Assigned'", groupobjectkey, uidperson)).OrderBy("XDateInserted desc").SelectAll();
                                 var tryget5 = await qr.Session.Source().TryGetAsync(q5, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
                                 if (tryget5.Success)
                                 {
