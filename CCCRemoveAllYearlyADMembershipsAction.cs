@@ -58,6 +58,11 @@ namespace QBM.CompositionApi
                     }
                     foreach (var key in assignmentkeys)
                     {
+                        XDocument doc = XDocument.Parse(key);
+                        var pValues = doc.Descendants("P").Select(p => p.Value).ToList();
+                        string uidaccount = pValues[0];
+                        string uidgroup = pValues[1];
+
                         var riskindex = string.Empty;
                         var q0 = Query.From("ADSGroup").Where(string.Format("UID_ADSGroup in (select UID_ADSGroup from ADSAccountinADSgroup where XObjectKey = '{0}')", key)).SelectAll();
                         var tryGet0 = await qr.Session.Source().TryGetAsync(q0, EntityLoadType.DelayedLogic).ConfigureAwait(false);
@@ -76,7 +81,10 @@ namespace QBM.CompositionApi
                             }
                         }
 
-                        var q2 = Query.From("ADSAccountInADSGroup").Where(string.Format("XObjectKey = '{0}' and ((XOrigin & 8) = 8)", key)).SelectAll();
+                        var q2 = Query.From("ADSAccountInADSGroup").Where(string.Format("UID_ADSGroup = '{0}' and XObjectKey in " +
+                                                                                        "(select pwo.ObjectKeyOrdered from PersonWantsOrg pwo " +
+                                                                                        "join Person p on p.UID_Person = pwo.UID_PersonOrdered " +
+                                                                                        "where pwo.OrderState = 'Assigned' and p.XObjectKey = '{1}')", uidgroup, xkey)).SelectAll();
                         var tryGet2 = await qr.Session.Source().TryGetAsync(q2, EntityLoadType.DelayedLogic).ConfigureAwait(false);
                         if (tryGet2.Success)
                         {
@@ -84,10 +92,7 @@ namespace QBM.CompositionApi
                             {
                                 riskindex = tryGet2.Result.GetValue("RiskIndexCalculated").ToString();
                             }
-                            XDocument doc = XDocument.Parse(key);
-                            var pValues = doc.Descendants("P").Select(p => p.Value).ToList();
-                            string uidaccount = pValues[0];
-                            string uidgroup = pValues[1];
+
                             var q3 = Query.From("ADSAccount").Where(string.Format("UID_ADSAccount = '{0}'", uidaccount)).SelectAll();
                             var q4 = Query.From("ADSGroup").Where(string.Format("UID_ADSGroup = '{0}'", uidgroup)).SelectAll();
                             var tryget3 = await qr.Session.Source().TryGetAsync(q3, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);

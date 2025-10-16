@@ -1,4 +1,5 @@
 ﻿using QBM.CompositionApi.Definition;
+using System.Xml.Linq;
 using VI.DB.Entities;
 
 namespace QBM.CompositionApi
@@ -13,6 +14,7 @@ namespace QBM.CompositionApi
                     List<object> objects = new List<object>();
                     string objectkey = string.Empty;
                     string group = string.Empty;
+                    string xkey = string.Empty;
                     foreach (var column in posted.columns)
                     {
                         if (column.column == "XObjectKey")
@@ -88,8 +90,21 @@ namespace QBM.CompositionApi
 
                     if (objectkey.StartsWith("<Key><T>ADSAccountInADSGroup</T>", StringComparison.OrdinalIgnoreCase))
                     {
+                        XDocument doc = XDocument.Parse(objectkey);
+                        var pValues = doc.Descendants("P").Select(p => p.Value).ToList();
+                        string uidaccount = pValues[0];
+                        string uidgroup = pValues[1];
+                        string uidperson = string.Empty;
+                        var q3 = Query.From("ADSAccount").Where(string.Format("UID_ADSAccount = '{0}'", uidaccount)).SelectAll();
+                        var tryget3 = await qr.Session.Source().TryGetAsync(q3, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
+                        if (tryget3.Success)
+                        {
+                            uidperson = tryget3.Result.GetValue("UID_Person");
+                        }
+                        var q2 = Query.From("ADSGroup").Where(string.Format("UID_ADSGroup = '{0}' and XObjectKey in (select ObjectKeyOrdered from PersonWantsOrg " +
+                                                                            "where OrderState = 'Assigned' and UID_PersonOrdered = '{1}')", uidgroup, uidperson)).SelectAll();
+
                         var q1 = Query.From("ADSAccountInADSGroup").Where(string.Format("XObjectKey = '{0}' and ((XOrigin & 1) = 1)", objectkey)).SelectAll();
-                        var q2 = Query.From("ADSAccountInADSGroup").Where(string.Format("XObjectKey = '{0}' and ((XOrigin & 8) = 8)", objectkey)).SelectAll();
                         var tryGet1 = await qr.Session.Source().TryGetAsync(q1, EntityLoadType.DelayedLogic).ConfigureAwait(false);
                         var tryGet2 = await qr.Session.Source().TryGetAsync(q2, EntityLoadType.DelayedLogic).ConfigureAwait(false);
                         if (!tryGet1.Success && !tryGet2.Success)
@@ -119,8 +134,21 @@ namespace QBM.CompositionApi
 
                     if (objectkey.StartsWith("<Key><T>AADUserInGroup</T>", StringComparison.OrdinalIgnoreCase))
                     {
+                        XDocument doc = XDocument.Parse(objectkey);
+                        var pValues = doc.Descendants("P").Select(p => p.Value).ToList();
+                        string uidaccount = pValues[1];
+                        string uidgroup = pValues[0];
+                        string uidperson = string.Empty;
+                        var q3 = Query.From("AADUser").Where(string.Format("UID_AADUser = '{0}'", uidaccount)).SelectAll();
+                        var tryget3 = await qr.Session.Source().TryGetAsync(q3, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
+                        if (tryget3.Success)
+                        {
+                            uidperson = tryget3.Result.GetValue("UID_Person");
+                        }
+                        var q2 = Query.From("AADGroup").Where(string.Format("UID_AADGroup = '{0}' and XObjectKey in (select ObjectKeyOrdered from PersonWantsOrg " +
+                                                                            "where OrderState = 'Assigned' and UID_PersonOrdered = '{1}')", uidgroup, uidperson)).SelectAll();
+
                         var q1 = Query.From("AADUserInGroup").Where(string.Format("XObjectKey = '{0}' and ((XOrigin & 1) = 1)", objectkey)).SelectAll();
-                        var q2 = Query.From("AADUserInGroup").Where(string.Format("XObjectKey = '{0}' and ((XOrigin & 8) = 8)", objectkey)).SelectAll();
                         var tryGet1 = await qr.Session.Source().TryGetAsync(q1, EntityLoadType.DelayedLogic).ConfigureAwait(false);
                         var tryGet2 = await qr.Session.Source().TryGetAsync(q2, EntityLoadType.DelayedLogic).ConfigureAwait(false);
                         if (!tryGet1.Success && !tryGet2.Success)
