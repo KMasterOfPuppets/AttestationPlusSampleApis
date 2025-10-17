@@ -17,6 +17,8 @@ namespace QBM.CompositionApi
                     string xkey = string.Empty;
                     string xsubkey = string.Empty;
                     var strUID_Person = qr.Session.User().Uid;
+                    string xprimarykey = string.Empty;
+                    string xprimarykey2 = string.Empty;
                     foreach (var column in posted.columns)
                     {
                         if (column.column == "xKey")
@@ -26,6 +28,14 @@ namespace QBM.CompositionApi
                         if (column.column == "xSubKey")
                         {
                             xsubkey = column.value;
+                        }
+                        if (column.column == "xPrimaryKey")
+                        {
+                            xprimarykey = column.value;
+                        }
+                        if (column.column == "xPrimaryKey2")
+                        {
+                            xprimarykey2 = column.value;
                         }
                     }
                     string wc = String.Format("XObjectKey = '{0}' and UID_AttestationCase in (select UID_AttestationCase from ATT_VAttestationDecisionPerson where uid_personhead = '{1}')", xsubkey, strUID_Person);
@@ -80,10 +90,10 @@ namespace QBM.CompositionApi
                             }
                         }
 
-                        var q2 = Query.From("ADSAccountInADSGroup").Where(string.Format("UID_ADSGroup = '{0}' and XObjectKey in " +
-                                                                                        "(select pwo.ObjectKeyOrdered from PersonWantsOrg pwo " +
-                                                                                        "join Person p on p.UID_Person = pwo.UID_PersonOrdered " +
-                                                                                        "where pwo.OrderState = 'Assigned' and p.XObjectKey = '{1}')", uidgroup, xkey)).SelectAll();
+                        var q2 = Query.From("ADSAccountInADSGroup").Where(string.Format("UID_ADSGroup = '{0}' and UID_ADSGroup in (select UID_ADSGroup from ADSGroup " +
+                                                                                        "where XObjectKey in (select ObjectKeyOrdered from PersonWantsOrg " +
+                                                                                        "where OrderState = 'Assigned' and UID_PersonOrdered = '{1}'))", uidgroup, xprimarykey)).SelectAll();
+
                         var tryGet2 = await qr.Session.Source().TryGetAsync(q2, EntityLoadType.DelayedLogic).ConfigureAwait(false);
                         if (tryGet2.Success)
                         {
@@ -98,9 +108,8 @@ namespace QBM.CompositionApi
                             var tryget4 = await qr.Session.Source().TryGetAsync(q4, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
                             if (tryget3.Success && tryget4.Success)
                             {
-                                string uidperson = tryget3.Result.GetValue("UID_Person");
                                 string groupobjectkey = tryget4.Result.GetValue("XObjectKey");
-                                var q5 = Query.From("PersonWantsOrg").Where(string.Format("ObjectKeyOrdered = '{0}' and UID_PersonOrdered = '{1}' and OrderState = 'Assigned'", groupobjectkey, uidperson)).OrderBy("XDateInserted desc").SelectAll();
+                                var q5 = Query.From("PersonWantsOrg").Where(string.Format("ObjectKeyOrdered = '{0}' and UID_PersonOrdered = '{1}' and OrderState = 'Assigned'", groupobjectkey, xprimarykey)).OrderBy("XDateInserted desc").SelectAll();
                                 var tryget5 = await qr.Session.Source().TryGetAsync(q5, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
                                 if (tryget5.Success)
                                 {

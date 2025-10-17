@@ -17,6 +17,8 @@ namespace QBM.CompositionApi
                     string xkey = string.Empty;
                     string xsubkey = string.Empty;
                     var strUID_Person = qr.Session.User().Uid;
+                    string xprimarykey = string.Empty;
+                    string xprimarykey2 = string.Empty;
                     foreach (var column in posted.columns)
                     {
                         if (column.column == "xKey")
@@ -26,6 +28,14 @@ namespace QBM.CompositionApi
                         if (column.column == "xSubKey")
                         {
                             xsubkey = column.value;
+                        }
+                        if (column.column == "xPrimaryKey")
+                        {
+                            xprimarykey = column.value;
+                        }
+                        if (column.column == "xPrimaryKey2")
+                        {
+                            xprimarykey2 = column.value;
                         }
                     }
 

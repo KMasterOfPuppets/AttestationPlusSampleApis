@@ -131,7 +131,7 @@ namespace QBM.CompositionApi
                             }
                         }
 
-                        var q2 = Query.From("ADSGroup").Where(string.Format("UID_ADSGroup = '{0}' and XObjectKey in (select ObjectKeyOrdered from PersonWantsOrg " +
+                        var q2 = Query.From("ADSGroup").Where(string.Format("UID_ADSGroup = '{0}' and UID_ADSGroup in (SELECT UID_ADSGroup FROM EX0DL) and XObjectKey in (select ObjectKeyOrdered from PersonWantsOrg " +
                                                                             "where OrderState = 'Assigned' and UID_PersonOrdered = '{1}')", uidgroup, uidperson)).SelectAll();
                         var tryGet2 = await qr.Session.Source().TryGetAsync(q2, EntityLoadType.DelayedLogic).ConfigureAwait(false);
                         if (tryGet2.Success)
@@ -175,26 +175,6 @@ namespace QBM.CompositionApi
                                 objecttodelete.MarkForDeletion();
                                 await u.PutAsync(objecttodelete, ct).ConfigureAwait(false);
                                 await u.CommitAsync(ct).ConfigureAwait(false);
-                            }
-                        }
-
-                        var q2 = Query.From("AADGroup").Where(string.Format("UID_AADGroup = '{0}' and XObjectKey in (select ObjectKeyOrdered from PersonWantsOrg " +
-                                                                            "where OrderState = 'Assigned' and UID_PersonOrdered = '{1}')", uidgroup, uidperson)).SelectAll();
-                        var tryGet2 = await qr.Session.Source().TryGetAsync(q2, EntityLoadType.DelayedLogic).ConfigureAwait(false);
-                        if (tryGet2.Success)
-                        {                                                   
-                            var q4 = Query.From("AADGroup").Where(string.Format("UID_AADGroup = '{0}'", uidgroup)).SelectAll();
-                            var tryget4 = await qr.Session.Source().TryGetAsync(q4, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
-                            if (tryget3.Success && tryget4.Success)
-                            {
-                                string groupobjectkey = await tryget4.Result.GetValueAsync<string>("XObjectKey").ConfigureAwait(false);
-                                var q5 = Query.From("PersonWantsOrg").Where(string.Format("ObjectKeyOrdered = '{0}' and UID_PersonOrdered = '{1}' and OrderState = 'Assigned'", groupobjectkey, uidperson)).OrderBy("XDateInserted desc").SelectAll();
-                                var tryget5 = await qr.Session.Source().TryGetAsync(q5, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
-                                if (tryget5.Success)
-                                {
-                                    await tryget5.Result.CallMethodAsync("Unsubscribe", ct).ConfigureAwait(false);
-                                    await tryget5.Result.SaveAsync(qr.Session, ct).ConfigureAwait(continueOnCapturedContext: false);
-                                }
                             }
                         }
                     }

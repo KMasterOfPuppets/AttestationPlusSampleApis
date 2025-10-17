@@ -101,7 +101,7 @@ namespace QBM.CompositionApi
                         {
                             uidperson = tryget3.Result.GetValue("UID_Person");
                         }
-                        var q2 = Query.From("ADSGroup").Where(string.Format("UID_ADSGroup = '{0}' and XObjectKey in (select ObjectKeyOrdered from PersonWantsOrg " +
+                        var q2 = Query.From("ADSGroup").Where(string.Format("UID_ADSGroup = '{0}' and UID_ADSGroup in (SELECT UID_ADSGroup FROM EX0DL) and XObjectKey in (select ObjectKeyOrdered from PersonWantsOrg " +
                                                                             "where OrderState = 'Assigned' and UID_PersonOrdered = '{1}')", uidgroup, uidperson)).SelectAll();
 
                         var q1 = Query.From("ADSAccountInADSGroup").Where(string.Format("XObjectKey = '{0}' and ((XOrigin & 1) = 1)", objectkey)).SelectAll();
@@ -145,13 +145,10 @@ namespace QBM.CompositionApi
                         {
                             uidperson = tryget3.Result.GetValue("UID_Person");
                         }
-                        var q2 = Query.From("AADGroup").Where(string.Format("UID_AADGroup = '{0}' and XObjectKey in (select ObjectKeyOrdered from PersonWantsOrg " +
-                                                                            "where OrderState = 'Assigned' and UID_PersonOrdered = '{1}')", uidgroup, uidperson)).SelectAll();
-
+                       
                         var q1 = Query.From("AADUserInGroup").Where(string.Format("XObjectKey = '{0}' and ((XOrigin & 1) = 1)", objectkey)).SelectAll();
                         var tryGet1 = await qr.Session.Source().TryGetAsync(q1, EntityLoadType.DelayedLogic).ConfigureAwait(false);
-                        var tryGet2 = await qr.Session.Source().TryGetAsync(q2, EntityLoadType.DelayedLogic).ConfigureAwait(false);
-                        if (!tryGet1.Success && !tryGet2.Success)
+                        if (!tryGet1.Success)
                         {
                             foreach (var column in posted.columns)
                             {
@@ -164,14 +161,12 @@ namespace QBM.CompositionApi
                                     objects.Add(new { column = column.column });
                                 }
                             }
-
                         }
                         else
                         {
                             foreach (var column in posted.columns)
                             {
                                 objects.Add(new { column = column.column });
-
                             }
                         }
                     }

@@ -17,6 +17,8 @@ namespace QBM.CompositionApi
                     string xkey = string.Empty;
                     string xsubkey = string.Empty;
                     var strUID_Person = qr.Session.User().Uid;
+                    string xprimarykey = string.Empty;
+                    string xprimarykey2 = string.Empty;
                     foreach (var column in posted.columns)
                     {
                         if (column.column == "xKey")
@@ -26,6 +28,14 @@ namespace QBM.CompositionApi
                         if (column.column == "xSubKey")
                         {
                             xsubkey = column.value;
+                        }
+                        if (column.column == "xPrimaryKey")
+                        {
+                            xprimarykey = column.value;
+                        }
+                        if (column.column == "xPrimaryKey2")
+                        {
+                            xprimarykey2 = column.value;
                         }
                     }
 
@@ -81,37 +91,7 @@ namespace QBM.CompositionApi
                                 await u.CommitAsync(ct).ConfigureAwait(false);
                             }
                         }
-
-                        var q2 = Query.From("AADUserInGroup").Where(string.Format("UID_AADGroup = '{0}' and XObjectKey in " +
-                                                                                  "(select pwo.ObjectKeyOrdered from PersonWantsOrg pwo " +
-                                                                                  "join Person p on p.UID_Person = pwo.UID_PersonOrdered " +
-                                                                                  "where pwo.OrderState = 'Assigned' and p.XObjectKey = '{1}')", uidgroup, xkey)).SelectAll();
-                        var tryGet2 = await qr.Session.Source().TryGetAsync(q2, EntityLoadType.DelayedLogic).ConfigureAwait(false);
-                        if (tryGet2.Success)
-                        {
-                            if (string.IsNullOrEmpty(riskindex))
-                            {
-                                riskindex = tryGet2.Result.GetValue("RiskIndexCalculated").ToString();
-                            }
-                            
-                            var q3 = Query.From("AADUser").Where(string.Format("UID_AADUser = '{0}'", uidaccount)).SelectAll();
-                            var q4 = Query.From("AADGroup").Where(string.Format("UID_AADGroup = '{0}'", uidgroup)).SelectAll();
-                            var tryget3 = await qr.Session.Source().TryGetAsync(q3, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
-                            var tryget4 = await qr.Session.Source().TryGetAsync(q4, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
-                            if (tryget3.Success && tryget4.Success)
-                            {
-                                string uidperson = tryget3.Result.GetValue("UID_Person");
-                                string groupobjectkey = tryget4.Result.GetValue("XObjectKey");
-                                var q5 = Query.From("PersonWantsOrg").Where(string.Format("ObjectKeyOrdered = '{0}' and UID_PersonOrdered = '{1}' and OrderState = 'Assigned'", groupobjectkey, uidperson)).OrderBy("XDateInserted desc").SelectAll();
-                                var tryget5 = await qr.Session.Source().TryGetAsync(q5, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
-                                if (tryget5.Success)
-                                {
-                                    await tryget5.Result.CallMethodAsync("Unsubscribe", ct).ConfigureAwait(false);
-                                    await tryget5.Result.SaveAsync(qr.Session, ct).ConfigureAwait(continueOnCapturedContext: false);
-                                }
-                            }
-                        }
-
+                     
                         var queryAC = Query.From("AttestationCase").SelectAll().Where(String.Format("XObjectKey = '{0}'", xsubkey));
                         var trygetAC = await qr.Session.Source().TryGetAsync(queryAC, EntityLoadType.DelayedLogic, ct).ConfigureAwait(false);
 
